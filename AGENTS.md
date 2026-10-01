@@ -57,6 +57,10 @@ Shell redirections always ask: the redirect is part of the resource text of the 
 
 Global-with-local-override: the plugin is declared by absolute path in `opencode.json`, globally then per-project with the same `package` string — OpenCode applies the last entry, which **replaces** options wholesale (local config must repeat full lists). Never combine a discovery symlink and an explicit entry for the same plugin: it loads twice under one `id` and the second fails as duplicate.
 
+## Packaging (npm)
+
+`package.json` publishes only `index.js`, `src` and `scripts` (plus README/LICENSE, always included); `prepublishOnly` runs the tests. For npm installs OpenCode resolves `<name>/server`, then `<name>` → `exports["."]` (`./src/index.js`); the root `index.js` serves local-path installs only. Check the tarball with `npm pack --dry-run`. `repository`/`homepage`/`bugs` are deliberately unset until the GitHub URL is known. Publishing itself is the user's command.
+
 ## 5. Operating rules
 
 - **Stay inside this folder.** Never edit files outside it — no `~/.config/opencode/opencode.json`, no server restart (`opencode service restart` kills the agent session), no `opencode` binary runs. If something outside is needed, stop and describe the exact steps for the user instead.

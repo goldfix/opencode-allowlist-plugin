@@ -1,9 +1,19 @@
 {
   "name": "opencode-allowlist-plugin",
   "version": "1.0.0",
-  "description": "OpenCode v2 plugin: applicative allowlist gate for dispositive operations (edit/shell/webfetch/websearch/MCP). Allow passes, denylist blocks, everything else asks.",
-  "type": "module",
+  "description": "OpenCode v2 plugin that gates file edits, shell commands, web and MCP calls behind an allowlist/denylist. Anything unlisted asks via the native permission dialog, enforced by the app and never by the model.",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "allowlist",
+    "denylist",
+    "permissions",
+    "security",
+    "ai-agents"
+  ],
+  "author": "pietro partescano",
   "license": "MIT",
+  "type": "module",
   "exports": {
     ".": "./src/index.js"
   },
@@ -12,8 +22,10 @@
     "src",
     "scripts"
   ],
+  "sideEffects": false,
   "scripts": {
     "test": "node --test test/",
+    "prepublishOnly": "npm test",
     "plugin:install": "bash scripts/install.sh",
     "plugin:uninstall": "bash scripts/uninstall.sh"
   },
@@ -22,5 +34,8 @@
   },
   "engines": {
     "node": ">=20.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -54,12 +54,35 @@ Default allow: `git status/diff/log`, `ls`, `cat`, `pwd`, `echo`, `mcp:docs-mcp-
 
 ## Installation
 
+### From npm
+
+Declare the package name in `opencode.json`; OpenCode installs it on its own (no `npm install` needed):
+
+```jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugins": [
+    {
+      "package": "opencode-allowlist-plugin",
+      "options": {
+        "allow": ["shell:git pull *", "shell:git status *", "mcp:docs-mcp-server"],
+        "deny": ["shell:rm -rf *", "shell:npm publish *"]
+      }
+    }
+  ]
+}
+```
+
+Then restart the OpenCode server (`opencode service restart`) and check `opencode plugin list` for `allowlist-gate`. The global/local override rules below apply unchanged (same `package` string, last entry wins, options replaced wholesale).
+
+### From a local checkout
+
 ```bash
 npm install
 npm test
 ```
 
-### Global with local override (recommended)
+### Global with local override (recommended for a checkout)
 
 No symlink: declare the plugin by absolute path, globally first, then per-project with the same `package` string. The last entry wins and **replaces** options wholesale — so local config must repeat the full lists.
 
