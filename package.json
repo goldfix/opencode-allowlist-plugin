@@ -1,0 +1,26 @@
+{
+  "name": "opencode-allowlist-plugin",
+  "version": "1.0.0",
+  "description": "OpenCode v2 plugin: applicative allowlist gate for dispositive operations (edit/shell/webfetch/websearch/MCP). Allow passes, denylist blocks, everything else asks.",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "index.js",
+    "src",
+    "scripts"
+  ],
+  "scripts": {
+    "test": "node --test test/",
+    "plugin:install": "bash scripts/install.sh",
+    "plugin:uninstall": "bash scripts/uninstall.sh"
+  },
+  "dependencies": {
+    "@opencode/plugin": "^2.0.19"
+  },
+  "engines": {
+    "node": ">=20.3"
+  }
+}
