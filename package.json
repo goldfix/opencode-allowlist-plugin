@@ -11,7 +11,7 @@
     "security",
     "ai-agents"
   ],
-  "author": "pietro partescano",
+  "author": "pietro partescano <goldfix@users.noreply.github.com>",
   "license": "MIT",
   "type": "module",
   "exports": {
