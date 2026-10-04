@@ -1,5 +1,12 @@
 # opencode-allowlist-plugin
 
+---
+
+Support me – buy me a coffee! :)
+[PayPal](https://www.paypal.com/donate/?hosted_button_id=F34KU49T4UQGL)
+
+---
+
 An **OpenCode v2** plugin that puts dispositive operations under applicative control: file modifications and active interactions with external services (git push, npm publish, remote commands, …) require user approval through OpenCode's **native permission dialog** — never through a model decision.
 
 - **Allowlist** → passes without asking
