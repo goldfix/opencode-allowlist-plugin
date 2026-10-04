@@ -1,12 +1,5 @@
 # opencode-allowlist-plugin
 
----
-
-Support me – buy me a coffee! :)
-[PayPal](https://www.paypal.com/donate/?hosted_button_id=F34KU49T4UQGL)
-
----
-
 An **OpenCode v2** plugin that puts dispositive operations under applicative control: file modifications and active interactions with external services (git push, npm publish, remote commands, …) require user approval through OpenCode's **native permission dialog** — never through a model decision.
 
 - **Allowlist** → passes without asking
@@ -135,3 +128,10 @@ Suite on `node --test`, no external framework: pure matching (`policy.test.js`: 
 ## How it works
 
 The plugin registers a single `permission.evaluate` hook — the same pipeline every built-in tool goes through via `Permission.assert` (see `source_app/opencode/packages/core/src/permission.ts`). Overriding `event.effect` there drives the native `permission.asked` TUI dialog, so enforcement is applicative: the model cannot talk its way past it.
+
+---
+
+Support me – buy me a coffee! :)
+[PayPal](https://www.paypal.com/donate/?hosted_button_id=F34KU49T4UQGL)
+
+---
